@@ -1,0 +1,18 @@
+fragment Asset on columnBlocks_asset_BlockType {
+  id
+  image {
+    ... on contentImages_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+    ... on videos_Asset {
+      title
+      src: url
+      width
+      height
+    }
+  }
+}

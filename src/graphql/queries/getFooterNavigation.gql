@@ -1,0 +1,12 @@
+query GetFooterNavigation {
+  navigationNodes(navHandle: "footerNavigation", level: 1) {
+    id
+    title
+    children {
+      id
+      href: url
+      title
+      newWindow
+    }
+  }
+}

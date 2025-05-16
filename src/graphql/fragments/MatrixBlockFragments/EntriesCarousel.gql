@@ -1,0 +1,11 @@
+fragment EntriesCarousel on contentBlocks_entriesCarousel_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  sectionType
+  categories {
+    id
+  }
+  sectionBackground
+}

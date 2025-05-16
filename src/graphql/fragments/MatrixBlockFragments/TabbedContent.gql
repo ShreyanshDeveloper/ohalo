@@ -1,0 +1,44 @@
+fragment TabbedContent on contentBlocks_tabbedContent_BlockType {
+  id
+  tabs {
+    ... on tabs_BlockType {
+      id
+      tabLabel
+      logo {
+        ... on logos_Asset {
+          src: url
+          alt
+          title
+          width
+          height
+        }
+      }
+      title: tabTitle
+      content: tabContent
+      button {
+        ... on linkField_Link {
+          ariaLabel
+          target
+          text
+          title
+          type
+          href: url
+        }
+      }
+      image {
+        ... on contentImages_Asset {
+          src: url
+          alt
+          title
+          width
+          height
+        }
+        ... on videos_Asset {
+          src: url
+          width
+          height
+        }
+      }
+    }
+  }
+}

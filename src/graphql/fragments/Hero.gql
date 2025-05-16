@@ -1,0 +1,60 @@
+fragment Hero on hero_hero_BlockType {
+  label: heroLabel
+  logo: heroLogo {
+    id
+    ... on logos_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+  title: heroTitle
+  redactor: heroContent
+  buttons: heroButtons {
+    ... on heroButtons_BlockType {
+      button {
+        ariaLabel
+        target
+        label: text
+        title
+        type
+        href: url
+      }
+    }
+  }
+  contentImage: heroContentImage {
+    ... on contentImages_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+  image: heroImage {
+    ... on largeImages_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+      focalPoint
+    }
+    ... on videos_Asset {
+      title
+      src: url
+      width
+      height
+    }
+  }
+  mobileImage: heroMobileImage {
+    title
+    src: url
+    alt
+    width
+    height
+  }
+  sectionBackground
+}

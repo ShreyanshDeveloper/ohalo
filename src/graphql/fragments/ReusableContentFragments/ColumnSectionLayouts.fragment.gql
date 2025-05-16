@@ -1,0 +1,28 @@
+fragment ColumnSectionLayouts on columnSectionLayouts_default_Entry {
+  id
+  columnBlocks {
+    ...ColumnQuote
+    ...Asset
+    ...Redactor
+    ...ColumnForm
+    ...Faqs
+    ...Data
+  }
+  columnRatio
+  columnNumber
+  columnAlignment
+  buttonGroup {
+    ... on buttonGroup_BlockType {
+      button {
+        ... on linkField_Link {
+          ariaLabel
+          target
+          label: text
+          title
+          type
+          href: url
+        }
+      }
+    }
+  }
+}

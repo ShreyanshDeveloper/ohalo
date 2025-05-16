@@ -1,0 +1,30 @@
+mutation enquiryFormSubmission(
+  $fullName: String
+  $officialEmail: String
+  $companyName: String!
+  $phoneNumber: String!
+  $iAmInterestedIn: String!
+  $iWorkIn: String!
+  $message: String!
+  $termsAndConditions: String!
+) {
+  save_enquiryForm_Submission(
+    fullName: $fullName
+    officialEmail: $officialEmail
+    companyName: $companyName
+    phoneNumber: $phoneNumber
+    iAmInterestedIn: $iAmInterestedIn
+    iWorkIn: $iWorkIn
+    message: $message
+    termsAndConditions: $termsAndConditions
+  ) {
+    fullName
+    officialEmail
+    companyName
+    phoneNumber
+    iAmInterestedIn
+    iWorkIn
+    message
+    termsAndConditions
+  }
+}

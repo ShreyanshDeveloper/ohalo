@@ -1,0 +1,15 @@
+fragment LinkList on linkList_default_Entry {
+  id
+  linkList {
+    ... on linkList_BlockType {
+      link: links {
+        ariaLabel
+        target
+        text
+        title
+        type
+        url
+      }
+    }
+  }
+}

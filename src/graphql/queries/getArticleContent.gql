@@ -1,0 +1,23 @@
+query getArticleContent($uri: [String!]) {
+  entry(section: "articles", uri: $uri) {
+    ... on articles_default_Entry {
+      title
+      postDate
+      articleAuthor
+      articleTags {
+        id
+        title
+      }
+      types {
+        id
+        title
+      }
+      articleHero {
+        ...ArticleHero
+      }
+      contentBlocks {
+        ...MatrixBlocks
+      }
+    }
+  }
+}

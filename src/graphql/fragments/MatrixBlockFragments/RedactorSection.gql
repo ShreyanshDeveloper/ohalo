@@ -1,0 +1,17 @@
+fragment RedactorSection on contentBlocks_redactor_BlockType {
+  id
+  label: sectionLabel
+  logo: sectionLogo {
+    ... on logos_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+  redactor: redactorContent
+  showDivider
+  contentWidth
+  sectionBackground
+}

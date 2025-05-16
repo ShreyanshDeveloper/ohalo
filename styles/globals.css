@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Mabry Pro';
+  src: url('/fonts/mabry-regular-pro/mabry-regular-pro.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Centra No2';
+  src: url('/fonts/centra-no2/otf/CentraNo2-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Centra No2';
+  src: url('/fonts/centra-no2/otf/CentraNo2-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0; 
+  font-size: 17px; 
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+hr {
+  height: 1px;
+  padding: 0;
+  border-color: currentColor;
+}
+
+/* Define Base Styling */
+@layer base {
+  html,
+  body {
+    @apply font-secondary;
+  }
+  section,
+  .section {
+    @apply py-large md:py-x-large;
+  }
+  .section-inner {
+    @apply px-medium;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Typography */
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5 {
+    @apply font-normal;
+    @apply font-primary;
+    @apply mb-large;
+  }
+  h1,
+  .h1 {
+    @apply text-mobile-h1;
+    @apply sm:text-h1;
+    @apply leading-mobile-h1;
+    @apply sm:leading-h1;
+    @apply mb-medium;
+  }
+  h2,
+  .h2 {
+    @apply text-mobile-h2;
+    @apply sm:text-h2;
+    @apply leading-mobile-h2;
+    @apply sm:leading-h2;
+    @apply mb-medium;
+  }
+  h3,
+  .h3 {
+    @apply text-mobile-h3;
+    @apply sm:text-h3;
+    @apply leading-mobile-h3;
+    @apply sm:leading-h3;
+    @apply mb-medium;
+  }
+  h4,
+  .h4 {
+    @apply text-mobile-h4;
+    @apply sm:text-h4;
+    @apply leading-mobile-h4;
+    @apply sm:leading-h4;
+    @apply mb-medium;
+  }
+  h5,
+  .h5 {
+    @apply text-mobile-h5;
+    @apply sm:text-h5;
+    @apply leading-mobile-h5;
+    @apply sm:leading-h5;
+    @apply mb-small;
+  }
+  h6,
+  .h6 {
+    @apply text-mobile-h6;
+    @apply sm:text-h6;
+    @apply leading-mobile-h6;
+    @apply sm:leading-h6;
+    @apply mb-large;
+    @apply font-secondary;
+    @apply font-medium;
+  }
+  .highlight {
+    @apply text-mobile-highlight;
+    @apply sm:text-highlight;
+    @apply leading-mobile-highlight;
+    @apply sm:leading-highlight;
+  }
+  p.large,
+  .large > p {
+    @apply text-mobile-large;
+    @apply sm:text-large;
+    @apply leading-mobile-large;
+    @apply sm:leading-large;
+  }
+  .medium,
+  strong {
+    @apply font-medium;
+  }
+  p {
+    @apply text-mobile-normal;
+    @apply sm:text-normal;
+    @apply leading-mobile-normal;
+    @apply sm:leading-normal;
+  }
+  .small,
+  small {
+    @apply text-mobile-small;
+    @apply sm:text-small;
+    @apply leading-mobile-small;
+    @apply sm:leading-small;
+  }
+  .x-small,
+  small.x-small {
+    @apply text-mobile-x-small;
+    @apply sm:text-x-small;
+    @apply leading-mobile-x-small;
+    @apply sm:leading-x-small;
+  }
+  p + p {
+    @apply mt-medium;
+  }
+
+  /* Buttons */
+  button:not(.no-defaults):not(.m-0),
+  .button:not(.no-defaults):not(.m-0) {
+    @apply mt-medium;
+  }
+  .bg-black button:not(.no-defaults):not(:hover),
+  .bg-black .button:not(.no-defaults):not(:hover) {
+    @apply bg-white;
+    @apply text-black;
+  }
+
+  /* Text Link */
+  main p a,
+  main a.text-link,
+  main button.text-link,
+  nav a.text-link {
+    @apply underline;
+    @apply underline-offset-4;
+    @apply transition-colors;
+    @apply duration-100;
+    display: inline-block;
+  }
+  main p a.text-link,
+  main button.text-link {
+    @apply mt-medium;
+  }
+  main p a:hover,
+  main p a:focus,
+  main a.text-link:hover,
+  main a.text-link:focus,
+  main button.text-link:hover,
+  main button.text-link:focus,
+  nav a.text-link:hover,
+  nav a.text-link:focus {
+    @apply bg-gray-5;
+    @apply text-black;
+  }
+
+  /* Footer */
+  footer a {
+    @apply underline-offset-4;
+  }
+  footer a:hover {
+    @apply underline;
+  }
+}
+
+.redactor ul {
+  list-style: initial;
+}
+.redactor ol {
+  list-style: decimal;
+}
+.redactor ul,
+.redactor ol {
+  padding-left: 0.5rem;
+  margin-left: 1rem;
+}
+
+.redactor ul li {
+  margin-top: 1rem;
+}
+.customChallenges .h5 {
+  margin-top: 10px;
+}
+.customChallenges img {
+  display: inline-block;
+}
+.partners-slider img {
+  object-fit: contain;
+  height: 150px;
+}
+
+/* Navigation Spacing */
+@media (max-width: 1023px) {
+  main {
+    margin-top: 79px;
+  }
+}
+
+@media (max-width: 767px) {
+  main {
+    margin-top: 65px;
+  }
+  nav ul ul {
+    padding-bottom: 50px;
+  }
+   .redactor td {
+    font-size: 9px;
+  }
+}
+
+main {
+  margin-top: 65px;
+}
+
+/* Video */
+@supports (aspect-ratio: 16 / 9) {
+  iframe[src*='vimeo'],
+  iframe[src*='youtube'] {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Reduced Motion */
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

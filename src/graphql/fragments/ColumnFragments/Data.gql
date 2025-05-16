@@ -1,0 +1,6 @@
+fragment Data on columnBlocks_data_BlockType {
+  id
+  dataValue
+  indicatorWidth
+  statistic
+}

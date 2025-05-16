@@ -1,0 +1,63 @@
+query GetFormie($handle: [String]) {
+  form: formieForm(handle: $handle) {
+    id
+    title
+    handle
+    siteId
+    csrfToken {
+      name
+      value
+    }
+    captchas {
+      handle
+      name
+      value
+    }
+    settings {
+      #   displayFormTitle
+      #   displayPageTabs
+      #   displayCurrentPageTitle
+      #   displayPageProgress
+      #   submitMethod
+      submitAction
+      submitActionTab
+      # submitActionUrl
+      #   submitActionFormHide
+      submitActionMessageHtml
+      #   submitActionMessageTimeout
+      redirectUrl
+      errorMessageHtml
+      #   loadingIndicator
+      #   loadingIndicatorText
+      #   validationOnSubmit
+      #   validationOnFocus
+      #   defaultLabelPosition
+      #   defaultInstructionsPosition
+      #   progressPosition
+      #   integrations {
+      #     settings
+      #   }
+      redirectEntry {
+        id
+        uri
+        slug
+        sectionHandle
+      }
+    }
+    pages {
+      name
+      id
+      settings {
+        submitButtonLabel
+        backButtonLabel
+        showBackButton
+        buttonsPosition
+      }
+      rows {
+        rowFields {
+          ...FieldFragment
+        }
+      }
+    }
+  }
+}

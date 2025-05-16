@@ -1,0 +1,12 @@
+fragment InformationGridLayout on contentBlocks_informationGridLayout_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  informationGridLayout {
+    ...InformationGridLayouts
+  }
+  asCards
+  asSlider
+  sectionBackground
+}

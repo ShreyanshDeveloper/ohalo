@@ -1,0 +1,7 @@
+fragment Calculator on contentBlocks_calculator_BlockType {
+  id
+  inputText
+  sectionTitles {
+    ...SectionTitles
+  }
+}

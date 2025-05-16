@@ -1,0 +1,15 @@
+fragment MatrixBlocks on MatrixBlockInterface {
+  ...FullWidthSection
+  ...ColumnLayout
+  ...InformationGridLayout
+  ...TabbedContent
+  ...Form
+  ...TestimonialsCarousel
+  ...FaqsSection
+  ...EntriesCarousel
+  ...LogoCarouselSection
+  ...RedactorSection
+  ...QuoteSection
+  ...LargeImageSection
+  ...Calculator
+}

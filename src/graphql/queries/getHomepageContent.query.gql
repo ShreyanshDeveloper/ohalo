@@ -1,0 +1,13 @@
+query getHomepageContent {
+  entry(section: "homepage") {
+    ... on homepage_homepage_Entry {
+      title
+      hero {
+        ...Hero
+      }
+      contentBlocks {
+        ...MatrixBlocks
+      }
+    }
+  }
+}

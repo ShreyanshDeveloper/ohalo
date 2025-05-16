@@ -1,0 +1,45 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+  repository_dispatch:
+    types: [afterCreateRevision]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.TEST_HOST_ADDRESS }}
+          username: ${{ secrets.TEST_USERNAME_NAME }}
+          password: ${{ secrets.TEST_PASSWORD_PASS }}
+          port: 22
+          source: "out/*"
+          target: "/mnt/home/mobilehost4indai/public_html/Auto/"
+
+      - name: Move out/ contents to parent directory on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TEST_HOST_ADDRESS }}
+          username: ${{ secrets.TEST_USERNAME_NAME }}
+          password: ${{ secrets.TEST_PASSWORD_PASS }}
+          port: 22
+          script: |
+            cd /mnt/home/mobilehost4indai/public_html/Auto
+            mv out/* .
+            rm -rf out

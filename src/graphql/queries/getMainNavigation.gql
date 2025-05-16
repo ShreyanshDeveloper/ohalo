@@ -1,0 +1,49 @@
+query GetMainNavigation {
+  navigationNodes(navHandle: "mainNavigation", level: 1) {
+    ... on mainNavigation_Node {
+      id
+      title
+      url
+      element {
+        uri
+      }
+      newWindow
+      typeLabel
+      plainText
+      children {
+        ... on mainNavigation_Node {
+          id
+          title
+          url
+          newWindow
+          plainText
+          element {
+            __typename
+            uri
+            ... on navigationBlocks_default_Entry {
+              plainText
+              linkType {
+                ... on linkField_Link {
+                  url
+                  text
+                }
+              }
+            }
+          }
+          children {
+            ... on mainNavigation_Node {
+              id
+              title
+              url
+              element {
+                uri
+              }
+              newWindow
+              plainText
+            }
+          }
+        }
+      }
+    }
+  }
+}

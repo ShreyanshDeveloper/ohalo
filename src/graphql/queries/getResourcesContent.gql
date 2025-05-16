@@ -1,0 +1,21 @@
+query getResourcesContent {
+  entry(section: "resources") {
+    ... on resources_resources_Entry {
+      articleHero {
+        ...ArticleHero
+      }
+    }
+  }
+
+  topics: categories(group: "topics") {
+    id
+    slug
+    title
+  }
+
+  types: categories(group: "types") {
+    id
+    slug
+    title
+  }
+}

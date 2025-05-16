@@ -1,0 +1,180 @@
+/** @type {import('tailwindcss').Config} */
+
+const universalColors = {
+  black: '#000000',
+  white: '#FFFFFF',
+  primary: '#0025F5',
+  status: {
+    error: '#E40000',
+    verify: '#219452',
+    disabled: '#E4E4E4',
+  },
+  gray: {
+    1: '#505050',
+    2: '#808080',
+    3: '#B4B4B4',
+    4: '#DEDEDE',
+    5: '#E4E4E4',
+    6: '#FAFAFA',
+  },
+};
+
+module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    colors: {
+      ...universalColors,
+      transparent: 'transparent',
+      secondary: {
+        primary: '#00FFC5',
+        secondary: '#FA6EFE',
+        tertiary: '#9656FF',
+      },
+      tints: {
+        'light-gray': '#FAFAFA',
+        blue: '#E5E9FE',
+        'light-blue': '#F7F9FF',
+      },
+      current: 'currentColor',
+    },
+    textColor: {
+      ...universalColors,
+    },
+    fontFamily: {
+      primary: [
+        'Mabry Pro',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
+      ],
+      secondary: [
+        'Centra No2',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Helvetica Neue',
+        'Arial',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
+      ],
+    },
+    fontSize: {
+      h1: '4.706rem',
+      h2: '3.294rem',
+      h3: '2.588rem',
+      h4: '1.765rem',
+      h5: '1.529rem',
+      h6: '1.294rem',
+      highlight: '7.647rem',
+      large: '1.176rem',
+      normal: '1rem',
+      small: '0.824rem',
+      'x-small': '0.647rem',
+      'mobile-h1': '1.882rem',
+      'mobile-h2': '1.647rem',
+      'mobile-h3': '1.471rem',
+      'mobile-h4': '1.412rem',
+      'mobile-h5': '1.294rem',
+      'mobile-h6': '1.059rem',
+      'mobile-highlight': '2.647rem',
+      'mobile-large': '1rem',
+      'mobile-normal': '0.824rem',
+      'mobile-small': '0.706rem',
+      'mobile-x-small': '0.588rem',
+    },
+    lineHeight: {
+      h1: '1',
+      h2: '1.1',
+      h3: '1.13',
+      h4: '1.2',
+      h5: '1.19',
+      h6: '1.27',
+      highlight: '1',
+      large: '1.4',
+      normal: '1.41',
+      small: '1.42',
+      'x-small': '1.36',
+      'mobile-h1': '1.18',
+      'mobile-h2': '1.28',
+      'mobile-h3': '1.24',
+      'mobile-h4': '1.25',
+      'mobile-h5': '1.36',
+      'mobile-h6': '1.33',
+      'mobile-highlight': '1.11',
+      'mobile-large': '1.4',
+      'mobile-normal': '1.71',
+      'mobile-small': '1.41',
+      'mobile-x-small': '1.4',
+    },
+    spacing: {
+      0: '0px',
+      'xx-small': '6px',
+      'x-small': '12px',
+      small: '18px',
+      medium: '30px',
+      normal: '32px',
+      large: '60px',
+      'x-large': '90px',
+      'xx-large': '120px',
+      'mobile-large': '42px',
+      'mobile-x-large': '60px',
+      'mobile-xx-large': '72px',
+    },
+    extend: {
+      aspectRatio: {
+        'hero-video': '1.2 / 1',
+      },
+      gridTemplateRows: {
+        7: 'repeat(7, minmax(0, 1fr))',
+      },
+    },
+    // extend: {
+    //   typography: {
+    //     md: {
+    //       css: [
+    //         {
+    //           maxWidth: '10ch',
+    //         },
+    //       ],
+    //     },
+    //     sm: {
+    //       css: [
+    //         {
+    //           maxWidth: '20ch',
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
+    configViewer: {
+      baseFontSize: 17, // default is 16
+      fonts: [
+        'http://localhost:3000/fonts/mabry-regular-pro/mabry-regular-pro.ttf',
+        'http://localhost:3000/fonts/centra-no2/otf/CentraNo2-Light.otf',
+        'http://localhost:3000/fonts/centra-no2/otf/CentraNo2-Medium.otf',
+      ],
+    },
+  },
+  plugins: [require('@tailwindcss/typography')],
+};

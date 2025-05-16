@@ -1,0 +1,22 @@
+query getPageContentByUri($uri: [String!]) {
+  entry(uri: $uri) {
+    ... on caseStudies_default_Entry {
+      title
+      hero {
+        ...Hero
+      }
+      contentBlocks {
+        ...MatrixBlocks
+      }
+    }
+    ... on pages_default_Entry {
+      title
+      hero {
+        ...Hero
+      }
+      contentBlocks {
+        ...MatrixBlocks
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+fragment ColumnQuote on columnBlocks_quote_BlockType {
+  id
+  quote
+  reference
+  size
+}

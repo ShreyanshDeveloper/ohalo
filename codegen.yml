@@ -1,0 +1,17 @@
+schema:
+  - ${GRAPHQL_ENDPOINT}:
+      headers:
+        Authorization: Bearer ${GRAPHQL_ACCESS_TOKEN}
+documents: './src/graphql/**/*.gql'
+generates:
+  ./src/lib/types/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
+    config:
+      avoidOptionals: false
+      dedupeFragments: true
+    hooks:
+      afterOneFileWrite:
+        - prettier --write

@@ -1,0 +1,9 @@
+fragment ColumnForm on columnBlocks_form_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  form {
+    handle
+  }
+}

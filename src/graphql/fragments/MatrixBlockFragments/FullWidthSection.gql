@@ -1,0 +1,11 @@
+fragment FullWidthSection on contentBlocks_fullWidthSection_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  content: fullWidthContent {
+    ...LinkList
+  }
+  showDivider
+  sectionBackground
+}

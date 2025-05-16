@@ -1,0 +1,12 @@
+fragment LargeImageSection on contentBlocks_largeImage_BlockType {
+  id
+  image {
+    ... on largeImages_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+}

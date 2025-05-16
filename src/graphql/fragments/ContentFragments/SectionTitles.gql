@@ -1,0 +1,14 @@
+fragment SectionTitles on sectionTitles_BlockType {
+  label: sectionLabel
+  logo: sectionLogo {
+    ... on logos_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+  title: sectionTitle
+  subtitle: sectionSubtitle
+}

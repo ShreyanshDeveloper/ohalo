@@ -1,0 +1,47 @@
+query GetEntriesBySectionAndCategories(
+  $section: [String!]
+  $categories: [CategoryCriteriaInput]
+  $limit: Int
+) {
+  entries(section: $section, relatedToCategories: $categories, limit: $limit) {
+    id
+    uri
+    title
+    sectionHandle
+    ... on caseStudies_default_Entry {
+      featureImage {
+        id
+        alt
+        title
+        url @transform(handle: "featureImage")
+        width @transform(handle: "featureImage")
+        height @transform(handle: "featureImage")
+      }
+      shortDescription
+      topics {
+        id
+        title
+      }
+    }
+    ... on articles_default_Entry {
+      featureImage {
+        id
+        alt
+        title
+        url @transform(handle: "featureImage")
+        width @transform(handle: "featureImage")
+        height @transform(handle: "featureImage")
+      }
+      shortDescription
+      topics {
+        id
+        title
+      }
+      types {
+        id
+        title
+        slug
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+fragment LogoCarouselSection on contentBlocks_logoCarousel_BlockType {
+  id
+  title: sectionTitle
+  images {
+    ... on logos_Asset {
+      id
+      title
+      src: url
+      alt
+      width
+      height
+      ariaHidden
+    }
+  }
+}

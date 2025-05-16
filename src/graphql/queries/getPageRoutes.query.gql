@@ -1,0 +1,5 @@
+query getPageRoutes {
+  entries(section: "pages") {
+    uri
+  }
+}

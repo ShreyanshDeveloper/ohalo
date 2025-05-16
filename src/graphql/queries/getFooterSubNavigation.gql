@@ -1,0 +1,8 @@
+query GetFooterSubNavigation {
+  navigationNodes(navHandle: "footerSubNavigation", level: 1) {
+    id
+    href: url
+    title
+    newWindow
+  }
+}

@@ -1,0 +1,20 @@
+fragment Redactor on columnBlocks_redactor_BlockType {
+  id
+  label
+  sectionTitles {
+    ...SectionTitles
+  }
+  redactor
+  buttons {
+    ... on buttons_BlockType {
+      button {
+        ariaLabel
+        target
+        label: text
+        title
+        type
+        href: url
+      }
+    }
+  }
+}

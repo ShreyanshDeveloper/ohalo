@@ -1,0 +1,67 @@
+{
+  "name": "ohalo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest",
+    "coverage": "vitest --coverage",
+    "commit": "git-cz",
+    "tailwind-config-viewer": "tailwind-config-viewer -o",
+    "possibleTypes": "dotenv -e .env.local -- node src/graphql/getPossibleTypes.js",
+    "types:generate": "dotenv -e .env.local -- yarn graphql-codegen",
+    "types:generate:watch": "dotenv -e .env.local -- yarn graphql-codegen --watch"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "clsx": "^1.2.1",
+    "embla-carousel-react": "^7.0.2",
+    "graphql": "^16.6.0",
+    "html-react-parser": "^5.1.10",
+    "luxon": "^3.0.4",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.35.0",
+    "react-seomatic": "^1.0.4",
+    "tailwind-config-viewer": "^1.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cz-commitlint": "^17.1.2",
+    "@graphql-codegen/cli": "^2.11.5",
+    "@graphql-codegen/typed-document-node": "^2.3.3",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@tailwindcss/typography": "^0.5.4",
+    "@types/luxon": "^3.0.2",
+    "@types/node": "18.6.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.8",
+    "commitizen": "^4.2.5",
+    "cross-fetch": "^3.1.5",
+    "dotenv-cli": "^6.0.0",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.7",
+    "typescript": "4.7.4",
+    "vitest": "^0.24.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
+}

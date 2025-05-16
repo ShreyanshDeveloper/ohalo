@@ -1,0 +1,6 @@
+fragment QuoteSection on contentBlocks_quote_BlockType {
+  id
+  quote
+  reference
+  size
+}

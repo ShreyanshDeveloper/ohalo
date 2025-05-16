@@ -1,0 +1,11 @@
+fragment Form on contentBlocks_form_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  form {
+    handle
+  }
+  redactor: sectionContent
+  sectionBackground
+}

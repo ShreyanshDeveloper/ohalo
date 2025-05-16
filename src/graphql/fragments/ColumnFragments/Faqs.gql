@@ -1,0 +1,9 @@
+fragment Faqs on columnBlocks_faqs_BlockType {
+  id
+  items: faqs {
+    ... on faqs_default_Entry {
+      title: plainText
+      content: redactor
+    }
+  }
+}

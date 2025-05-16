@@ -1,0 +1,10 @@
+query GetSeomatic($uri: String) {
+  seomatic(uri: $uri, asArray: true) {
+    metaTitleContainer
+    metaTagContainer
+    metaLinkContainer
+    metaScriptContainer
+    metaJsonLdContainer
+    metaSiteVarsContainer
+  }
+}

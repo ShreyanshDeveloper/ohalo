@@ -1,0 +1,17 @@
+query GetGlobalSetHeader {
+  globalSet(handle: "header") {
+    ... on header_GlobalSet {
+      __typename
+      navigationType
+      logo {
+        ... on logos_Asset {
+          src: url
+          title
+          alt
+          width
+          height
+        }
+      }
+    }
+  }
+}

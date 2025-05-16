@@ -1,0 +1,44 @@
+fragment InformationGridLayouts on informationGridLayouts_default_Entry {
+  id
+  informationGridBlocks {
+    ... on informationGridBlocks_block_BlockType {
+      id
+      icon {
+        ... on svgIcons_Asset {
+          title
+          url
+          alt
+          width
+          height
+          ariaHidden
+        }
+      }
+      blockTitle
+      blockSubtitle
+      blockContent
+      blockLink {
+        ariaLabel
+        target
+        text
+        title
+        type
+        url
+      }
+    }
+  }
+
+  buttonGroup {
+    ... on buttonGroup_BlockType {
+      button {
+        ... on linkField_Link {
+          ariaLabel
+          target
+          text
+          title
+          type
+          url
+        }
+      }
+    }
+  }
+}

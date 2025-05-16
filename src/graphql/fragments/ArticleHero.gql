@@ -1,0 +1,14 @@
+fragment ArticleHero on articleHero_hero_BlockType {
+  label: heroLabel
+  title: heroTitle
+  redactor: heroContent
+  contentImage: heroContentImage {
+    ... on contentImages_Asset {
+      title
+      src: url
+      alt
+      width
+      height
+    }
+  }
+}

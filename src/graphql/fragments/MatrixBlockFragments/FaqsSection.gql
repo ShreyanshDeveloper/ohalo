@@ -1,0 +1,12 @@
+fragment FaqsSection on contentBlocks_faqs_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  items: faqs {
+    ... on faqs_default_Entry {
+      title: plainText
+      content: redactor
+    }
+  }
+}

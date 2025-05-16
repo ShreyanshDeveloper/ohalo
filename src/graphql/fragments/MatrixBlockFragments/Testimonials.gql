@@ -1,0 +1,31 @@
+fragment TestimonialsCarousel on contentBlocks_testimonialsCarousel_BlockType {
+  id
+  testimonials {
+    ... on testimonials_default_Entry {
+      testimonial {
+        ... on testimonial_BlockType {
+          id
+          logo {
+            ... on logos_Asset {
+              title
+              src: url
+              alt
+              width
+              height
+            }
+          }
+          quote
+          reference
+          button {
+            href: url
+            label: text
+            ariaLabel
+            target
+            title
+            type
+          }
+        }
+      }
+    }
+  }
+}

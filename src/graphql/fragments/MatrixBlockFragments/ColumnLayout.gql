@@ -1,0 +1,11 @@
+fragment ColumnLayout on contentBlocks_columnLayout_BlockType {
+  id
+  sectionTitles {
+    ...SectionTitles
+  }
+  columnSectionLayout {
+    ...ColumnSectionLayouts
+  }
+  showDivider
+  sectionBackground
+}

@@ -1,0 +1,24 @@
+query GetGlobalSetFooter {
+  globalSet(handle: "footer") {
+    ... on footer_GlobalSet {
+      logo {
+        ... on logos_Asset {
+          src: url
+          title
+          alt
+          width
+          height
+        }
+      }
+      socialLinks {
+        ... on socialLinks_BlockType {
+          linkedin
+          twitter
+          facebook
+          github
+          youtube
+        }
+      }
+    }
+  }
+}
