@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.TEST_PASSWORD_PASS }}
           port: 22
           source: "out/*"
-          target: "/mnt/home/mobilehost4indai/public_html/Auto/"
+          target: "/home/devohalo/public_html/"
 
       - name: Move out/ contents to parent directory on server
         uses: appleboy/ssh-action@master
@@ -40,6 +40,6 @@ jobs:
           password: ${{ secrets.TEST_PASSWORD_PASS }}
           port: 22
           script: |
-            cd /mnt/home/mobilehost4indai/public_html/Auto
+            cd /home/devohalo/public_html
             mv out/* .
             rm -rf out
