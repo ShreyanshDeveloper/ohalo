@@ -104,7 +104,7 @@ export const getStaticProps = async ({ params, previewData, preview }: GetStatic
   const { slug = [] } = params as IParams;
   const token = (previewData as PreviewData)?.token || null;
   const apolloClient = initializeApollo(token);
-  const uri = `${slug.join('/')}`;
+  const uri = `blog/${slug.join('/')}`;
   
   console.log("uri",uri);
 
